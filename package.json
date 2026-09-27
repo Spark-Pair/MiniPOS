@@ -9,7 +9,8 @@
     "dist": "electron-builder --win nsis portable --publish never"
   },
   "dependencies": {
-    "sql.js": "^1.13.0"
+    "sql.js": "^1.13.0",
+    "electron-updater": "^6.6.2"
   },
   "devDependencies": {
     "electron": "^38.2.0",
@@ -37,7 +38,17 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
+      "createStartMenuShortcut": true,
+      "artifactName": "MiniPOS-Setup-${version}.${ext}"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "Spark-Pair",
+      "repo": "MiniPOS",
+      "releaseType": "release"
+    },
+    "portable": {
+      "artifactName": "MiniPOS-Portable-${version}.${ext}"
     }
   }
 }

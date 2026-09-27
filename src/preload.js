@@ -1,0 +1,1 @@
+const{contextBridge,ipcRenderer}=require('electron');contextBridge.exposeInMainWorld('miniPOS',{db:(a,p={})=>ipcRenderer.invoke('db',a,p),print:h=>ipcRenderer.invoke('print',h)});

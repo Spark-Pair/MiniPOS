@@ -1,1 +1,43 @@
-{"name":"minipos","version":"0.1.0","description":"Simple offline Windows POS by SparkPair","main":"src/main.js","private":true,"scripts":{"start":"electron .","dist":"electron-builder --win nsis portable"},"dependencies":{"sql.js":"^1.13.0"},"devDependencies":{"electron":"^38.2.0","electron-builder":"^26.0.0"},"build":{"appId":"com.sparkpair.minipos","productName":"MiniPOS","asar":true,"files":["src/**/*","package.json"],"directories":{"output":"dist"},"win":{"target":["nsis","portable"],"artifactName":"MiniPOS-Setup-${version}.${ext}"},"nsis":{"oneClick":false,"allowToChangeInstallationDirectory":true,"createDesktopShortcut":true,"createStartMenuShortcut":true}}}
+{
+  "name": "minipos",
+  "version": "0.1.0",
+  "description": "Simple offline Windows POS by SparkPair",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable --publish never"
+  },
+  "dependencies": {
+    "sql.js": "^1.13.0"
+  },
+  "devDependencies": {
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.sparkpair.minipos",
+    "productName": "MiniPOS",
+    "asar": true,
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "MiniPOS-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
